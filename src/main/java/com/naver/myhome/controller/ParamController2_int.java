@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 public class ParamController2_int {
 
 	@RequestMapping(value = "/param1", method = RequestMethod.GET)
-	public String login3() { // BbsBean bbs - command 객체
+	public String login3() { 
 		return "param/paramForm1";
 	}
 
@@ -31,7 +31,6 @@ public class ParamController2_int {
 		model.addAttribute("url", request.getRequestURI());
 		
 		return "param/list1";
-
 	}
 
 	/* 
@@ -67,7 +66,7 @@ public class ParamController2_int {
 	}
 	
 	// int age : 파라미터와 같은 이름의 변수에 저장할 경우 이와 같이 작성하면 됩니다. (항상 오는 경우)
-	@RequestMapping(value = "/param5.do")
+	@RequestMapping(value = "/param5.do", method = RequestMethod.POST)
 	public String param5(int age, Model model, HttpServletRequest request) {
 		model.addAttribute("age", age);
 		model.addAttribute("url", request.getRequestURI());
